@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DukaSmart - Shop Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>DukaSmart</h1>
+        <p>Shop Management System</p>
+    </header>
+
+    <main>
+        <h2>Dashboard</h2>
+        <p>Welcome to your shop management system.</p>
+
+        <section class="summary">
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="totalProducts">0</p>
+            </div>
+
+            <div class="card">
+                <h3>Today's Sales</h3>
+                <p id="totalSales">KSh 0</p>
+            </div>
+
+            <div class="card">
+                <h3>Low Stock Items</h3>
+                <p id="lowStock">0</p>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <h2>Add a Product</h2>
+
+            <form id="productForm">
+                <label for="productName">Product Name</label>
+                <input type="text" id="productName"
+                       placeholder="e.g. Sugar" required>
+
+                <label for="productPrice">Price (KSh)</label>
+                <input type="number" id="productPrice"
+                       min="0.01" step="0.01" required>
+
+                <label for="productQuantity">Quantity</label>
+                <input type="number" id="productQuantity"
+                       min="0" step="1" required>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section class="products-section">
+            <h2>Product Inventory</h2>
+
+            <input type="search" id="searchProduct"
+                   placeholder="Search products...">
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList"></tbody>
+                </table>
+            </div>
+        </section>
+       <section class="form-section">
+            <h2>Record a Sale</h2>
+
+            <form id="saleForm">
+                <label for="saleProduct">Select Product</label>
+                <select id="saleProduct" required>
+                    <option value="">Choose a product</option>
+                </select>
+
+                <label for="saleQuantity">Quantity Sold</label>
+                <input
+                    type="number"
+                    id="saleQuantity"
+                    min="1"
+                    step="1"
+                    required
+                >
+
+                <p>
+                    Total Amount:
+                    <strong id="saleTotal">KSh 0.00</strong>
+                </p>
+
+                <button type="submit">Record Sale</button>
+            </form>
+        </section> 
+    </main>
+
+    <footer>
+        <p>&copy; 2026 DukaSmart Shop Management System</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
